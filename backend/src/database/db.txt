@@ -1,0 +1,27 @@
+book:
+    - book_id: PK, auto_increment
+    - title: unique, varchar, not null
+    - author: varchar, not null
+    - cover: varchar, not null
+    - publisher: varchar, not null
+    - available_quantity: int, not null
+    - borrowed_quantity: int, default 0
+    - is_deleted: tinyint, default 0
+
+user:
+    - user_id: PK, auto_increment
+    - name: varchar, not null
+    - email: varchar, not null
+    - position: varchar, not null
+    - faculty: varchar, not null
+    - major: varchar, not null
+    - password: varchar, not null
+
+borrow:
+    - borrow_id: PK, auto_increment
+    - user_id: FK
+    - book_id: FK
+    - book_quantity: int, not null
+    - borrow_date: date, not null
+    - return_date: date, not null
+    - actual_return_date: date, default null
